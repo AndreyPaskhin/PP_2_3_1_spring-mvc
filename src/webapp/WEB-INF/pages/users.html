@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List users</title>
+</head>
+<body>
+<p>Список пользователей</p>
+<div    th:each="user : ${users}">
+        <a th:href="@{'/show?id=' + ${user.getId()}}" th:text="${user.name}">User</a>
+
+</div>
+<br/>
+<hr/>
+<div><input type="button" value="Add User" onclick="window.location.href = 'new'"/></div>
+<br>
+
+</body>
+</html>
